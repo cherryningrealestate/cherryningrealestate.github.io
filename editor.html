@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<title>Data editor</title>
+
+		<style>
+/*body {
+	margin-left: 20px;
+}*/
+
+ul {
+	list-style-type: none;
+}
+
+.item-text, .item-new-text {
+	cursor: pointer;
+}
+
+.item-new-text {
+	font-style: italic;
+}
+
+.caret {
+  /*color: black;*/
+  display: inline-block;
+  margin-right: 6px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.caret-down {
+	transform: rotate(90deg);
+}
+
+.hide {
+	display: none !important;
+}
+		</style>
+
+	</head>
+	<body>
+
+		<div style="margin: 20px; margin-top: 10px;">
+			<button type="button" onclick="editorLoad()">
+				Load Data File
+			</button>
+
+			<button type="button" onclick="editorSave()">
+				Save Data File
+			</button>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-lg">
+					<ul id="tree-root">
+					</ul>
+				</div>
+		
+				<div class="col-lg" id="edit-container" data-id="-1">
+					<p>
+						<div>Type</div>
+						<input type="radio" name="type" id="type-cat"></input>
+						<label>Category</label><br>
+						<input type="radio" name="type" id="type-item"></input>
+						<label>Item</label><br>
+						<input type="radio" name="type" id="type-radio"></input>
+						<label>Item exclusive</label><br>
+
+						<span id="group-container" class="hide">
+							<label>Exclusive group</label>
+							<input type="textbox" id="group-input"></input>
+						</span>
+					</p>
+		
+					<div>Name</div>
+					<input type="textbox" id="name-input"></input>
+					<br>
+					<div>Output name</div>
+					<input type="textbox" id="oname-input"></input>
+					<br>
+					<div>Category</div>
+					<input type="textbox" id="cat-input"></input>
+					<br>
+					<div>Cost</div>
+					<span>$</span>
+					<input type="textbox" id="cost-input"></input>
+					<br>
+					<br>
+					<input type="checkbox" name="type" id="check-sel"></input>
+					<label>Selected</label><br>
+					<input type="checkbox" name="type" id="check-dis"></input>
+					<label>Disabled</label><br>
+					<br>
+
+					<button type="button" onclick="editorDelete()">
+						Delete
+					</button>
+					<button type="button" onclick="editorMoveUp()">
+						Move Up
+					</button>
+					<button type="button" onclick="editorMoveDown()">
+						Move Down
+					</button>
+		
+				</div>
+
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<script src="editor.js"></script>
+	</body>
+</html>

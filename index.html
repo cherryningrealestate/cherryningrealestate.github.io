@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="screen.css" media="screen">
+		<link rel="stylesheet" href="print.css" media="print">
+
+		<title>Let us work out the best plan for you</title>
+
+	</head>
+	<body>
+
+
+		<div id="page-container">
+			<div id="messages">
+			</div>
+
+			<div id="step0" class="">
+				<div id="step0-title">Let us work out the best plan for you</div>
+				<div id="step0-btn">
+					<a href="#" class="btn btn-primary btn-disabled">Start</a>
+				</div>
+			</div>
+
+			<div id="step1" class="hide">
+				<div class="container-fluid mt-3 mb-3" id="menu-container">
+					<!--
+					<div class="card">
+						<div class="card-header">
+							<div class="custom-control custom-checkbox">
+							  <input type="checkbox" class="custom-control-input" id="customCheck0">
+							  <label class="custom-control-label" for="customCheck0"></label>
+							</div>
+							<span>Example</span>
+							<div style="float: right;">
+								<a href="javascript:overlayImage('example.jpg')" class="btn btn-primary">Show image</a>
+							</div>
+						</div>
+						<div class="collapse show" id="collapseExample">
+							<div class="card-body">
+							</div>
+						</div>
+					</div>
+					--!>
+				</div>
+	
+				<div>
+				</div>
+	
+				<div>
+					<!--<span class="ml-3">
+						<a href="javascript:step0()" class="btn btn-primary">Back</a>
+					</span>-->
+					<span class="mb-3 mr-3" style="float: right;">
+						<a href="javascript:step2()" class="btn btn-primary">Next</a>
+					</span>
+				</div>
+			</div>
+
+			<div id="step2" class="ml-3 mr-3 hide">
+				<table class="table">
+					<thead>
+						<th>Category</th>
+						<th>Description</th>
+						<th>Cost</th>
+						<th>Our</th>
+						<th>Client</th>
+					</thead>
+					<tbody id="step2-tbody">
+					</tbody>
+				</table>
+	
+				<div>
+					<span class="mb-3">
+						<a href="javascript:step1()" class="btn btn-primary">Back</a>
+					</span>
+					<span class="mb-3 mr-3" style="float: right;">
+						<a href="javascript:step3()" class="btn btn-primary">Done</a>
+					</span>
+				</div>
+			</div>
+
+			<div id="overlay-container" class="overlay hide">
+				<div class="overlay-window">
+					<span class="oi oi-x overlay-cross" onclick="overlayClose()"></span>
+	
+					<div id="overlay-image" class="overlay-inner hide">
+						<img>
+					</div>
+				</div>
+	
+			</div>
+
+		</div>
+
+		<div id="print-container">
+
+			<div id="print-header">
+				<img id="print-img" src="img/barfoot.png"></img>
+				<span id="print-title">Recommended<br>budget</span>
+			</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Category</th>
+						<th>Description</th>
+						<th>Our cost</th>
+						<th>Client cost</th>
+					</tr>
+				</thead>
+				<tbody id="print-tbody">
+				</tbody>
+			</table>
+
+			<div id="print-footer">
+				<div class="footer-row">
+					<div class="footer-col">Total</div>
+					<div class="footer-col" id="footer-11">$12345.67</div>
+					<div class="footer-col"></div>
+					<div class="footer-col" id="footer-12">$12345.67</div>
+					<div class="footer-col"></div>
+				</div>
+				<div class="footer-row">
+					<div class="footer-col">Includes GST of</div>
+					<div class="footer-col" id="footer-21"></div>
+					<div class="footer-col"></div>
+					<div class="footer-col" id="footer-22"></div>
+					<div class="footer-col"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<script src="script.js"></script>
+	</body>
+</html>
