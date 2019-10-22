@@ -90,7 +90,7 @@ function renderNode(node, level, p) {
 	}
 
 	if (d.link) {
-		header.append('<a target="_blank" rel="noopener noreferrer" href='+d.link+'>'+d.text+'</a>');
+		header.append('<a target="_blank" rel="noopener noreferrer" href="'+d.link+'">'+d.text+'</a>');
 	} else {
 		header.append('<span>'+d.text+'</span>');
 	}
