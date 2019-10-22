@@ -225,7 +225,7 @@ function editorSetHandlers() {
 
 function editorSave() {
 	let o = editorGenerateJson($('#tree-root'));
-	let s = JSON.stringify(o);
+	let s = JSON.stringify(o, null, 1);
 	let b = new Blob([s], {type: "application/json"});
 	let u = URL.createObjectURL(b);
 	let a = document.createElement('a');

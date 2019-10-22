@@ -71,6 +71,10 @@ html, body, #page-container {
 	margin-right: 1rem;
 }
 
+.card-header > span {
+	margin-right: 1rem;
+}
+
 .card-header > .btn {
 	color: #fff;
 }
