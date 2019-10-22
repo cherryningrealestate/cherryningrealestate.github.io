@@ -75,30 +75,43 @@ ul {
 
 						<span id="group-container" class="hide">
 							<label>Exclusive group</label>
-							<input type="textbox" id="group-input"></input>
+							<input type="text" id="group-input"></input>
 						</span>
 					</p>
 		
 					<div>Name</div>
-					<input type="textbox" id="name-input"></input>
+					<input type="text" id="name-input"></input>
 					<br>
 					<div>Output name</div>
-					<input type="textbox" id="oname-input"></input>
+					<input type="text" id="oname-input"></input>
 					<br>
 					<div>Category</div>
-					<input type="textbox" id="cat-input"></input>
+					<input type="text" id="cat-input"></input>
 					<br>
 					<div>Cost</div>
 					<span>$</span>
-					<input type="textbox" id="cost-input"></input>
+					<input type="text" id="cost-input"></input>
 					<br>
+
 					<br>
-					<input type="checkbox" name="type" id="check-sel"></input>
+					<input type="checkbox" id="check-contrib"></input>
+					<label>Contribution</label><br>
+					<input type="checkbox" id="check-sel"></input>
 					<label>Selected</label><br>
-					<input type="checkbox" name="type" id="check-dis"></input>
+					<input type="checkbox" id="check-dis"></input>
 					<label>Disabled</label><br>
 					<br>
 
+					<input type="checkbox" id="check-link"></input>
+					<label>Link</label>
+					<input type="text" id="link-input" class="hide"></input>
+					<br>
+					<input type="checkbox" id="check-pdf"></input>
+					<label>PDF</label>
+					<input type="text" id="pdf-input" class="hide"></input>
+					<br>
+
+					<br>
 					<button type="button" onclick="editorDelete()">
 						Delete
 					</button>

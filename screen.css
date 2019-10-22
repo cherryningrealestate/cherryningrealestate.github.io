@@ -6,30 +6,37 @@
 	margin: 1rem;
 }
 
-#step0-title {
-	width: 100%;
-	text-align: center;
-	font-size: 48px;
-	margin-top: 10%;
+html, body, #page-container {
+	height: 100%;
+}
 
-	color: #9f0206;
-	font-weight: bold;
+#step0 {
+	background: linear-gradient(to bottom right, #003572, #0063cd);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+#step0-inner {
+	width: 100%;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+#step0-text {
+	color: white;
+	font-size: 3rem;
+	font-weight: 600;
+	display: block;
+
+	margin-bottom: 40px;
 }
 
 #step0-btn {
-	position: absolute;
-	right: 64px;
-	bottom: 64px;
-}
-
-#step0-btn .btn-primary {
+  margin-top: 40px;
 	font-size: 2rem;
-	border-radius: 0.5rem;
-}
-
-.btn-disabled {
-	background-color: grey !important;
-	border-color: grey !important;
+	border-radius: 0.6rem;
 }
 
 .card-header .custom-checkbox {
@@ -52,21 +59,20 @@
 	background-image: none !important;
 }
 
-.btn-primary {
-	font-size: 0.9rem;
-	/*
-	padding-top: 0.2rem;
-	padding-bottom: 0.2rem;
-	padding-left: 0.4rem;
-	padding-right: 0.4rem;
-	*/
-}
-
 .level-1 > .card-header {
-	background-color: #9f0206;
+	background-color: #003572;
 	color: #fff;
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+.card-header > a {
+	color: #fff;
+	margin-right: 1rem;
+}
+
+.card-header > .btn {
+	color: #fff;
 }
 
 .card-body {
@@ -74,6 +80,29 @@
 	padding-bottom: 0;
 	padding-left: 0.5rem;
 	padding-right: 0;
+}
+
+.btn-group {
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 1rem;
+}
+
+#step2 {
+	padding-top: 1rem;
+}
+
+#step3 {
+	padding-top: 2rem;
+}
+
+#step3-text {
+	font-size: 1.5rem;
+}
+
+#step3-table {
+	margin-top: 2rem;
+	font-size: 1rem;
 }
 
 .overlay {
@@ -84,49 +113,24 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0,0,0,0.5);
 	z-index: 10000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: #808080;
 }
 
-.overlay-window {
-	width: calc(100% - 50px);
-	height: calc(100% - 50px);
-	background-color: #FFF;
-	border: 1px solid #777;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.overlay-inner {
-	width: 100%;
-	height: 100%;
-	padding: 10px;
-}
-
-.overlay-cross {
+.overlay-back {
 	position: absolute;
-	top: 40px;
-	right: 40px;
+	top: 20px;
+	left: 30px;
 	cursor: pointer;
-}
-
-.overlay-inner > img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
+	font-size: 1.5rem;
+	padding: 0.2rem;
+	background-color: rgba(192, 192, 192, 0.5);
 }
 
 iframe {
-	border: 0;
-	width: 100%;
 	height: 100%;
-	left: 0;
-	top: 0;
+	width: 100%;
+	border: 0;
 }
 
 .hide {

@@ -13,87 +13,97 @@
 		<title>Marketing Budget</title>
 
 	</head>
-	<body>
-
+	<body class="">
 
 		<div id="page-container">
-			<div id="messages">
-			</div>
+			<div id="messages"></div>
 
 			<div id="step0" class="">
-				<div id="step0-title">Let's get started!</div>
-				<div id="step0-btn">
-					<a href="#" class="btn btn-primary btn-disabled">Start</a>
+				<div id="step0-inner">
+					<span id="step0-text">Your Marketing Budget</span>
+					<input id="step0-addr" class="form-control form-control-lg" type="text" placeholder="Address">
+					<button id="step0-btn" type="button"
+						class="float-right btn btn-primary btn-lg" disabled>
+						Let's Get Started</button>
 				</div>
 			</div>
 
 			<div id="step1" class="hide">
 				<div class="container-fluid mt-3 mb-3" id="menu-container">
-					<!--
-					<div class="card">
-						<div class="card-header">
-							<div class="custom-control custom-checkbox">
-							  <input type="checkbox" class="custom-control-input" id="customCheck0">
-							  <label class="custom-control-label" for="customCheck0"></label>
-							</div>
-							<span>Example</span>
-							<div style="float: right;">
-								<a href="javascript:overlayImage('example.jpg')" class="btn btn-primary">Show image</a>
-							</div>
-						</div>
-						<div class="collapse show" id="collapseExample">
-							<div class="card-body">
-							</div>
-						</div>
-					</div>
-					--!>
 				</div>
 	
-				<div>
-				</div>
-	
-				<div>
-					<!--<span class="ml-3">
-						<a href="javascript:step0()" class="btn btn-primary">Back</a>
-					</span>-->
-					<span class="mb-3 mr-3" style="float: right;">
+				<div class="btn-group">
+					<span class="float-right mr-3">
 						<a href="javascript:step2()" class="btn btn-primary">Next</a>
 					</span>
 				</div>
 			</div>
 
 			<div id="step2" class="ml-3 mr-3 hide">
-				<table class="table">
-					<thead>
+				<table id="step2-table" class="table">
+					<thead class="thead-light">
 						<th>Category</th>
 						<th>Description</th>
 						<th>Cost</th>
-						<th>Our</th>
-						<th>Client</th>
 					</thead>
 					<tbody id="step2-tbody">
 					</tbody>
+					<tfoot>
+						<tr>
+							<th>Total:</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</tfoot>
 				</table>
 	
-				<div>
-					<span class="mb-3">
+				<div class="btn-group">
+					<span>
 						<a href="javascript:step1()" class="btn btn-primary">Back</a>
 					</span>
-					<span class="mb-3 mr-3" style="float: right;">
-						<a href="javascript:step3()" class="btn btn-primary">Done</a>
+					<span class="float-right mr-3">
+						<a href="javascript:step3()" class="btn btn-primary">Next</a>
+					</span>
+				</div>
+			</div>
+
+			<div id="step3" class="ml-3 mr-3 hide">
+				<div id="step3-text" class="ml-3">
+					Cherry's contribution to your marketing<br>
+					Without costing any money your property can be on the market
+				</div>
+
+				<table id="step3-table" class="table">
+					<thead class="thead-light">
+						<tr>
+							<th>Item</th>
+							<th>Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Total:</th>
+							<th></th>
+						</tr>
+					</tfoot>
+				</table>
+
+				<div>
+					<span>
+						<a href="javascript:step1()" class="btn btn-primary">Back</a>
+					</span>
+					<span class="float-right mr-3">
+						<a href="javascript:stepp()" class="btn btn-primary">Next</a>
 					</span>
 				</div>
 			</div>
 
 			<div id="overlay-container" class="overlay hide">
-				<div class="overlay-window">
-					<span class="oi oi-x overlay-cross" onclick="overlayClose()"></span>
-	
-					<div id="overlay-image" class="overlay-inner hide">
-						<img>
-					</div>
-				</div>
-	
+				<span class="oi oi-arrow-left overlay-back" onclick="overlayClose()"></span>
+				<iframe>
+				</iframe>
 			</div>
 
 		</div>
@@ -102,7 +112,8 @@
 
 			<div id="print-header">
 				<img id="print-img" src="img/barfoot.png"></img>
-				<span id="print-title">Recommended<br>budget</span>
+				<div id="print-title">Recommended<br>budget</div>
+				<div id="print-addr"></div>
 			</div>
 
 			<table>
@@ -121,9 +132,9 @@
 			<div id="print-footer">
 				<div class="footer-row">
 					<div class="footer-col">Total</div>
-					<div class="footer-col" id="footer-11">$12345.67</div>
+					<div class="footer-col" id="footer-11"></div>
 					<div class="footer-col"></div>
-					<div class="footer-col" id="footer-12">$12345.67</div>
+					<div class="footer-col" id="footer-12"></div>
 					<div class="footer-col"></div>
 				</div>
 				<div class="footer-row">
@@ -140,6 +151,7 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.6"></script>
 
 		<script src="script.js"></script>
 	</body>

@@ -8,8 +8,8 @@
 }
 
 #print-header {
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 48px;
+	margin-bottom: 32px;
 }
 
 #print-title {
@@ -23,6 +23,12 @@
 	float: right;
 	width: 30%;
 	margin-top: 32px;
+}
+
+#print-addr {
+	font-size: 1.5rem;
+	color: #404040;
+	margin-top: 16px;
 }
 
 #print-footer {
