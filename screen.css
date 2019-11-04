@@ -76,6 +76,10 @@ html, body, #page-container {
 }
 
 .card-header > .btn {
+	margin-right: 0.5rem !important;
+}
+
+.card-header > .btn {
 	color: #fff;
 }
 
@@ -119,6 +123,7 @@ html, body, #page-container {
 	bottom: 0;
 	z-index: 10000;
 	background-color: #808080;
+	background-color: #000000;
 }
 
 .overlay-back {
@@ -129,12 +134,24 @@ html, body, #page-container {
 	font-size: 1.5rem;
 	padding: 0.2rem;
 	background-color: rgba(192, 192, 192, 0.5);
+	border-radius: 4px;
+	z-index: 100000;
 }
 
-iframe {
+.overlay-iframe {
 	height: 100%;
 	width: 100%;
 	border: 0;
+}
+
+.overlay-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin:auto;
+	width: 100%;
 }
 
 .hide {

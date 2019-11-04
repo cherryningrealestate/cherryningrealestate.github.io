@@ -100,6 +100,18 @@ function renderNode(node, level, p) {
 		header.append('<a class="btn btn-primary btn-sm" href='+href+'>PDF</a>');
 	}
 
+	if (d.video) {
+		let href = 'javascript:overlayVideo('+id+')'
+		header.append('<a class="btn btn-primary btn-sm" href='+href+'>Video</a>');
+	}
+
+	if (d.images) {
+		for (let i = 0; i < d.images.length; i++) {
+			let href = 'javascript:overlayImage('+id+','+i+')'
+			header.append('<a class="btn btn-primary btn-sm" href='+href+'>Photo</a>');
+		}
+	}
+
 	if (node.children) {
 		for (let c of node.children) {
 			renderNode(c, level+1, body);
@@ -192,7 +204,7 @@ function renderStep3() {
 	return tot;
 }
 
-function renderPrint() {
+function renderPrint(inhibit) {
 	$('#print-addr').text(app.address);
 
 	let tp = $('#print-tbody');
@@ -203,7 +215,8 @@ function renderPrint() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (isSelected(i) || d.contrib) {
+		if (isSelected(i) || (!inhibit && d.contrib)) {
+
 			let row = $('<tr>').appendTo(tp);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
@@ -270,9 +283,9 @@ function step3() {
 	}
 }
 
-function stepp() {
+function stepp(inhibit) {
 	try {
-		renderPrint();
+		renderPrint(inhibit);
 		setTimeout(print, 0);
 	} catch (e) {
 		if (e) showAlert("error", e);
@@ -281,15 +294,45 @@ function stepp() {
 
 function overlayClose() {
 	$('.overlay').addClass('hide');
-	$('.overlay > iframe').attr("src", "");
+	$('.overlay-iframe').addClass('hide');
+	$('.overlay-iframe').removeAttr("src");
+	$('.overlay-video').addClass('hide');
+	$('.overlay-video').trigger('pause');
+	$('.overlay-video > source').remove();
+	$('.overlay-img').addClass('hide');
+	$('.overlay-img').removeAttr("src");
 }
 
 function overlayPdf(id) {
 	try {
 		let s = app.dataMap[id].pdf;
 		let url = "/pdfjs/viewer.html?file="+encodeURI("/pdf/"+s);
-		$('.overlay > iframe').attr("src", url);
+		$('.overlay-iframe').attr("src", url);
+		$('.overlay-iframe').removeClass('hide');
+		$('.overlay').removeClass('hide');
+	} catch (e) {
+		if (e) showAlert("error", e);
+	}
+}
 
+function overlayVideo(id) {
+	try {
+		let s = app.dataMap[id].video;
+		let url = encodeURI(s);
+		$('.overlay-video').append('<source src="'+url+'" type="video/mp4">');
+		$('.overlay-video').removeClass('hide');
+		$('.overlay').removeClass('hide');
+	} catch (e) {
+		if (e) showAlert("error", e);
+	}
+}
+
+function overlayImage(id, num) {
+	try {
+		let s = app.dataMap[id].images[num];
+		let url = encodeURI(s);
+		$('.overlay-img').attr("src", url);
+		$('.overlay-img').removeClass('hide');
 		$('.overlay').removeClass('hide');
 	} catch (e) {
 		if (e) showAlert("error", e);
