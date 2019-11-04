@@ -34,6 +34,7 @@
 	
 				<div class="btn-group">
 					<span class="float-right mr-3">
+						<a href="javascript:stepp(true)" class="btn btn-primary mr-2">Summary</a>
 						<a href="javascript:step2()" class="btn btn-primary">Next</a>
 					</span>
 				</div>
@@ -69,8 +70,7 @@
 
 			<div id="step3" class="ml-3 mr-3 hide">
 				<div id="step3-text" class="ml-3">
-					Cherry's contribution to your marketing<br>
-					Without costing any money your property can be on the market
+					Cherry's contribution to your marketing
 				</div>
 
 				<table id="step3-table" class="table">
@@ -90,7 +90,7 @@
 					</tfoot>
 				</table>
 
-				<div>
+				<div class="btn-group">
 					<span>
 						<a href="javascript:step1()" class="btn btn-primary">Back</a>
 					</span>
@@ -102,8 +102,9 @@
 
 			<div id="overlay-container" class="overlay hide">
 				<span class="oi oi-arrow-left overlay-back" onclick="overlayClose()"></span>
-				<iframe>
-				</iframe>
+				<iframe class="overlay-iframe hide"></iframe>
+				<video class="overlay-video hide" width="100%" height="100%" controls></video>
+				<img class="overlay-img hide"></img>
 			</div>
 
 		</div>

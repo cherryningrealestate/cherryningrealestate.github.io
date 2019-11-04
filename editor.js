@@ -119,7 +119,8 @@ function editorSelectEdit(id) {
 	}
 
 	$('#name-input').val(d.text);
-	$('#oname-input').val(d.oname);
+	if (d.oname) $('#oname-input').val(d.oname);
+	else $('#oname-input').val("");
 	$('#cat-input').val(d.cat);
 	$('#cost-input').val(d.cost);
 
@@ -130,24 +131,14 @@ function editorSelectEdit(id) {
 	if (d.disabled) $('#check-dis').prop('checked', true);
 	else $('#check-dis').prop('checked', false);
 
-	if (d.link) {
-		$('#check-link').prop('checked', true);
-		$('#link-input').val(d.link);
-		$('#link-input').removeClass('hide');
-	} else {
-		$('#check-link').prop('checked', false);
-		$('#link-input').val("");
-		$('#link-input').addClass('hide');
-	}
-	if (d.pdf) {
-		$('#check-pdf').prop('checked', true);
-		$('#pdf-input').val(d.pdf);
-		$('#pdf-input').removeClass('hide');
-	} else {
-		$('#check-pdf').prop('checked', false);
-		$('#pdf-input').val("");
-		$('#pdf-input').addClass('hide');
-	}
+	if (d.link) $('#link-input').val(d.link);
+	else $('#link-input').val("");
+	if (d.pdf) $('#pdf-input').val(d.pdf);
+	else $('#pdf-input').val("");
+	if (d.video) $('#video-input').val(d.video);
+	else $('#video-input').val("");
+	if (d.images) $('#images-input').val(d.images.join(','));
+	else $('#images-input').val("");
 }
 
 function editorEditEvent() {
@@ -180,23 +171,21 @@ function editorEditEvent() {
 	d.cost = $('#cost-input').val();
 	d.cat = $('#cat-input').val();
 	d.contrib = $('#check-contrib').is(":checked");
+	if (!d.contrib) delete d.contrib;
 	d.selected = $('#check-sel').is(":checked");
+	if (!d.selected) delete d.selected;
 	d.disabled = $('#check-dis').is(":checked");
+	if (!d.disabled) delete d.disabled;
 
-	if ($('#check-link').is(":checked")) {
-		$('#link-input').removeClass('hide');
-		d.link = $('#link-input').val();
-	} else {
-		$('#link-input').addClass('hide');
-		delete d.link;
-	}
-	if ($('#check-pdf').is(":checked")) {
-		$('#pdf-input').removeClass('hide');
-		d.pdf = $('#pdf-input').val();
-	} else {
-		$('#pdf-input').addClass('hide');
-		delete d.pdf;
-	}
+	d.link = $('#link-input').val().trim();
+	if (!d.link) delete d.link;
+	d.pdf = $('#pdf-input').val().trim();
+	if (!d.pdf) delete d.pdf;
+	d.video = $('#video-input').val().trim();
+	if (!d.video) delete d.video;
+	d.images = $('#images-input').val().trim();
+	if (!d.images) delete d.images;
+	else d.images = d.images.split(',');
 }
 
 function editorSetHandlers() {
@@ -217,10 +206,10 @@ function editorSetHandlers() {
 	$('#check-sel').on("click", f);
 	$('#check-dis').on("click", f);
 
-	$('#check-link').on("click", f);
-	$('#check-pdf').on("click", f);
 	$('#link-input').on("input", f);
 	$('#pdf-input').on("input", f);
+	$('#video-input').on("input", f);
+	$('#images-input').on("input", f);
 }
 
 function editorSave() {
