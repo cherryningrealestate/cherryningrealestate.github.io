@@ -32,7 +32,7 @@ function editorInsertNode(d, hide, p) {
 	t.click(function(ev) {
 		let x = ev.target.parentElement.getAttribute("data-id");
 		if (!x) return;
-		editorSelectEdit(parseInt(x));
+		editorSelectEdit(parseInt(x, 10));
 	});
 
 	return ul;
@@ -66,7 +66,7 @@ function editorGenerateJson(p) {
 		let e = $(elem);
 		if (e.hasClass('item-new')) return;
 
-		let id = parseInt(e.attr('data-id'));
+		let id = parseInt(e.attr('data-id'), 10);
 		arr[i] = {
 			"d": editor.dataMap[id],
 			"children": editorGenerateJson(e.children('ul'))
@@ -77,14 +77,14 @@ function editorGenerateJson(p) {
 
 function editorDelete() {
 	let edit = $('#edit-container');
-	let id = parseInt(edit.attr('data-id'));
+	let id = parseInt(edit.attr('data-id'), 10);
 	editor.elemMap[id].remove();
 	edit.attr('data-id', '-1');
 }
 
 function editorMoveUp() {
 	let edit = $('#edit-container');
-	let id = parseInt(edit.attr('data-id'));
+	let id = parseInt(edit.attr('data-id'), 10);
 	let e = editor.elemMap[id];
 	if (e.prev().length > 0) {
 		e.prev().insertAfter(e);
@@ -93,7 +93,7 @@ function editorMoveUp() {
 
 function editorMoveDown() {
 	let edit = $('#edit-container');
-	let id = parseInt(edit.attr('data-id'));
+	let id = parseInt(edit.attr('data-id'), 10);
 	let e = editor.elemMap[id];
 	if (e.next().next().length > 0) {
 		e.next().insertBefore(e);
@@ -130,6 +130,8 @@ function editorSelectEdit(id) {
 	else $('#check-sel').prop('checked', false);
 	if (d.disabled) $('#check-dis').prop('checked', true);
 	else $('#check-dis').prop('checked', false);
+	if (d.dle) $('#check-dle').prop('checked', true);
+	else $('#check-dle').prop('checked', false);
 
 	if (d.link) $('#link-input').val(d.link);
 	else $('#link-input').val("");
@@ -139,11 +141,14 @@ function editorSelectEdit(id) {
 	else $('#video-input').val("");
 	if (d.images) $('#images-input').val(d.images.join(','));
 	else $('#images-input').val("");
+
+	if (d.num) $('#num-input').val(d.num);
+	else $('#num-input').val("");
 }
 
 function editorEditEvent() {
 	let e = $('#edit-container');
-	let id = parseInt(e.attr('data-id'));
+	let id = parseInt(e.attr('data-id'), 10);
 	if (id < 0) return;
 	editor.dataMap[id] = {};
 	let d = editor.dataMap[id];
@@ -170,12 +175,15 @@ function editorEditEvent() {
 	d.oname = $('#oname-input').val();
 	d.cost = $('#cost-input').val();
 	d.cat = $('#cat-input').val();
+
 	d.contrib = $('#check-contrib').is(":checked");
 	if (!d.contrib) delete d.contrib;
 	d.selected = $('#check-sel').is(":checked");
 	if (!d.selected) delete d.selected;
 	d.disabled = $('#check-dis').is(":checked");
 	if (!d.disabled) delete d.disabled;
+	d.dle = $('#check-dle').is(":checked");
+	if (!d.dle) delete d.dle;
 
 	d.link = $('#link-input').val().trim();
 	if (!d.link) delete d.link;
@@ -186,6 +194,9 @@ function editorEditEvent() {
 	d.images = $('#images-input').val().trim();
 	if (!d.images) delete d.images;
 	else d.images = d.images.split(',');
+
+	d.num = parseInt($('#num-input').val().trim(), 10);
+	if (isNaN(d.num)) delete d.num;
 }
 
 function editorSetHandlers() {
@@ -205,11 +216,14 @@ function editorSetHandlers() {
 	$('#check-contrib').on("click", f);
 	$('#check-sel').on("click", f);
 	$('#check-dis').on("click", f);
+	$('#check-dle').on("click", f);
 
 	$('#link-input').on("input", f);
 	$('#pdf-input').on("input", f);
 	$('#video-input').on("input", f);
 	$('#images-input').on("input", f);
+
+	$('#num-input').on("input", f);
 }
 
 function editorSave() {
