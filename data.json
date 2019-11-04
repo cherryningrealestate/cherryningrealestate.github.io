@@ -97,17 +97,6 @@
     "d": {
      "checkbox": true,
      "radio": false,
-     "text": "Photos & interactive floor plan kitchen / furnishing",
-     "cost": "565",
-     "cat": "Marketing",
-     "contrib": true
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
      "text": "HD video",
      "cost": "300",
      "cat": "Marketing"
@@ -157,7 +146,8 @@
      "oname": "",
      "cost": "440",
      "cat": "Marketing",
-     "contrib": true
+     "contrib": true,
+     "dle": true
     },
     "children": []
    }
@@ -358,6 +348,17 @@
      "cat": "Facebook"
     },
     "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "Target marketing",
+     "oname": "",
+     "cost": "200",
+     "cat": ""
+    },
+    "children": []
    }
   ]
  },
@@ -365,8 +366,10 @@
   "d": {
    "checkbox": false,
    "text": "Western Home",
+   "oname": "",
    "cost": "",
-   "cat": ""
+   "cat": "",
+   "num": 3
   },
   "children": [
    {
@@ -408,16 +411,19 @@
   "d": {
    "checkbox": false,
    "text": "NZ Herald - Carousel",
+   "oname": "",
    "cost": "",
    "cat": "",
-   "pdf": "Barfoot Thompson Hot Properties Carousel - June 2017.pdf"
+   "pdf": "Barfoot Thompson Hot Properties Carousel - June 2017.pdf",
+   "num": 3
   },
   "children": [
    {
     "d": {
      "checkbox": true,
      "radio": false,
-     "text": "Hot properties spot for 7 days",
+     "text": "Hot properties spot",
+     "oname": "",
      "cost": "300",
      "cat": "NZ Herald"
     },
