@@ -232,8 +232,10 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "realestate",
      "text": "3 weeks quality package",
+     "oname": "",
      "cost": "250",
      "cat": "realestate.co.nz"
     },
@@ -242,8 +244,10 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "realestate",
      "text": "3 weeks premium pacakge ",
+     "oname": "",
      "cost": "400",
      "cat": "realestate.co.nz"
     },
@@ -356,7 +360,7 @@
      "text": "Target marketing",
      "oname": "",
      "cost": "200",
-     "cat": ""
+     "cat": "Facebook"
     },
     "children": []
    }
@@ -368,40 +372,42 @@
    "text": "Western Home",
    "oname": "",
    "cost": "",
-   "cat": "",
-   "num": 3
+   "cat": ""
   },
   "children": [
    {
     "d": {
      "checkbox": true,
-     "radio": true,
-     "group": "western",
+     "radio": false,
      "text": "1/4 page",
+     "oname": "",
      "cost": "245.69",
-     "cat": "Western Home"
+     "cat": "Western Home",
+     "num": 3
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": true,
-     "group": "western",
+     "radio": false,
      "text": "1/2 page",
+     "oname": "",
      "cost": "491.38",
-     "cat": "Western Home"
+     "cat": "Western Home",
+     "num": 3
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": true,
-     "group": "western",
+     "radio": false,
      "text": "Full page",
+     "oname": "",
      "cost": "982.75",
-     "cat": "Western Home"
+     "cat": "Western Home",
+     "num": 3
     },
     "children": []
    }
@@ -414,8 +420,7 @@
    "oname": "",
    "cost": "",
    "cat": "",
-   "pdf": "Barfoot Thompson Hot Properties Carousel - June 2017.pdf",
-   "num": 3
+   "pdf": "Barfoot Thompson Hot Properties Carousel - June 2017.pdf"
   },
   "children": [
    {
@@ -425,7 +430,8 @@
      "text": "Hot properties spot",
      "oname": "",
      "cost": "300",
-     "cat": "NZ Herald"
+     "cat": "NZ Herald",
+     "num": 3
     },
     "children": []
    }

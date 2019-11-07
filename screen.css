@@ -83,16 +83,8 @@ html, body, #page-container {
 	color: #fff;
 }
 
-.level-1 > .card-header > .float-right {
-	font-size: 1rem;
-}
-
-.level-1 > .card-header > .float-right > span {
-	margin: 0.25rem;
-}
-
-.level-1 > .card-header > .float-right > .btn {
-	font-size: 0.8rem;
+.card-header > .float-right > .btn {
+	font-size: 0.75rem;
 	padding: 0.125rem 0.25rem;
 	margin: 0 0.25rem;
 }

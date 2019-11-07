@@ -4,7 +4,7 @@ app = {
 }
 
 function showAlert(level, text) {
-	if (level == "error") level = "danger";
+	if (level === "error") level = "danger";
 
 	if (text instanceof Error) {
 		if (text.stack) text = text.stack;
@@ -29,7 +29,7 @@ function loadMenuData() {
 		app.menuData = data;
 		try {
 			renderMenu(data);
-			for (let i = 1; i < app.itemCount; i++) {
+			for (let i = 1; i <= app.itemCount; i++) {
 				if (app.dataMap[i].num) numChg(0, i);
 			}
 			let btn = $('#step0-btn');
@@ -69,6 +69,17 @@ function renderNode(node, level, p) {
 
 		let right = $('<div class="float-right">').appendTo(header);
 
+		if (d.num) {
+			d.ooname = d.oname;
+			d.cur = 1;
+
+			d.numElem = $('<span style="margin-right: 0.25rem;"></span>').appendTo(right);
+			right.append('<a class="btn btn-sm btn-secondary" href="javascript:numChg(-1,'+id+')"><span class="oi oi-minus">')
+			right.append('<a class="btn btn-sm btn-secondary" href="javascript:numChg(+1,'+id+')"><span class="oi oi-plus">')
+
+			right.append('<span style="margin-right: 1rem;">');
+		}
+
 		d.costElem = $('<span>$'+d.cost+'<span>').appendTo(right);
 
 		if (!d.radio) {
@@ -93,15 +104,6 @@ function renderNode(node, level, p) {
 		if (d.disabled) {
 			right.find('input').prop("disabled", true);
 		}
-	} else if (d.num) {
-		d.cur = 1;
-
-		let right = $('<div class="float-right" style="display: flex; align-items: center;">').appendTo(header);
-
-		right.append('<span>Weeks:');
-		right.append('<a class="btn btn-sm btn-primary" href="javascript:numChg(-1,'+id+')"><span class="oi oi-minus">')
-		d.numElem = $('<span>1</span>').appendTo(right);
-		right.append('<a class="btn btn-sm btn-primary" href="javascript:numChg(+1,'+id+')"><span class="oi oi-plus">')
 	}
 
 	if (d.link) {
@@ -397,18 +399,16 @@ function loadAutocomplete() {
 function numChg(delta, id) {
 	let d = app.dataMap[id];
 	if (d.cur + delta <= d.num && d.cur + delta >= 1) d.cur += delta;
-	d.numElem.text(d.cur);
 
-	for (let idc of d.children) {
-		let dc = app.dataMap[idc];
-		if (!dc.ooname) dc.ooname = dc.oname;
-		if (!dc.ocost) dc.ocost = parseFloat(dc.cost);
-		dc.cost = (dc.ocost * d.cur).toFixed(2);
-		dc.oname = dc.ooname + ' - ' + d.cur + ' week';
-		if (d.cur > 1) dc.oname += 's';
+	let wk = (d.cur === 1) ? ' week' : ' weeks';
 
-		dc.costElem.text('$'+dc.cost);
-	}
+	d.numElem.text('' + d.cur + wk);
+
+	if (!d.ocost) d.ocost = parseFloat(d.cost);
+	d.cost = (d.ocost * d.cur).toFixed(2).replace('.00','');
+	d.oname = d.ooname + ' - ' + d.cur + wk;
+
+	d.costElem.text('$'+d.cost);
 }
 
 loadMenuData();
