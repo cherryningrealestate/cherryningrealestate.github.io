@@ -182,8 +182,8 @@ function renderStep2() {
 	let tot = 0;
 
 	for (let i = 1; i <= app.itemCount; i++) {
-		if (isSelected(i)) {
-			let d = app.dataMap[i];
+		let d = app.dataMap[i];
+		if (!d.contrib && isSelected(i)) {
 			let row = $('<tr data-id="#">'.replace(/#/g, i)).appendTo(t);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
@@ -208,7 +208,7 @@ function renderStep3() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (d.contrib && !isSelected(i)) {
+		if (d.contrib) {
 			let d = app.dataMap[i];
 			let row = $('<tr>').appendTo(t);
 			row.append('<td>' + d.oname);
@@ -239,7 +239,7 @@ function renderPrint(inhibit) {
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
 
-			if (isSelected(i)) {
+			if (!d.contrib) {
 				row.append('<td>$0');
 				row.append('<td>$'+d.cost);
 				tot_2 += parseFloat(d.cost);
