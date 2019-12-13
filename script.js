@@ -208,7 +208,7 @@ function renderStep3() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (d.contrib) {
+		if (d.contrib && !isSelected(i)) {
 			let d = app.dataMap[i];
 			let row = $('<tr>').appendTo(t);
 			row.append('<td>' + d.oname);
@@ -225,6 +225,18 @@ function renderStep3() {
 function renderPrint(inhibit) {
 	$('#print-addr').text(app.address);
 
+	$('.print-th-opt').addClass('hide');
+	$('.footer-col:nth-child(2)').removeClass('hide');
+	$('.footer-col:nth-child(3)').removeClass('hide');
+	if (inhibit) {
+		$('#print-th-5').removeClass('hide');
+		$('.footer-col:nth-child(2)').addClass('hide');
+		$('.footer-col:nth-child(3)').addClass('hide');
+	} else {
+		$('#print-th-3').removeClass('hide');
+		$('#print-th-4').removeClass('hide');
+	}
+
 	let tp = $('#print-tbody');
 	tp.empty();
 
@@ -239,8 +251,8 @@ function renderPrint(inhibit) {
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
 
-			if (!d.contrib) {
-				row.append('<td>$0');
+			if (!d.contrib || isSelected(i)) {
+				if (!inhibit) row.append('<td>$0');
 				row.append('<td>$'+d.cost);
 				tot_2 += parseFloat(d.cost);
 			} else {
