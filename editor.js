@@ -126,6 +126,8 @@ function editorSelectEdit(id) {
 
 	if (d.contrib) $('#check-contrib').prop('checked', true);
 	else $('#check-contrib').prop('checked', false);
+	if (d.contrib2) $('#check-contrib2').prop('checked', true);
+	else $('#check-contrib2').prop('checked', false);
 	if (d.selected) $('#check-sel').prop('checked', true);
 	else $('#check-sel').prop('checked', false);
 	if (d.disabled) $('#check-dis').prop('checked', true);
@@ -178,6 +180,8 @@ function editorEditEvent() {
 
 	d.contrib = $('#check-contrib').is(":checked");
 	if (!d.contrib) delete d.contrib;
+	d.contrib2 = $('#check-contrib2').is(":checked");
+	if (!d.contrib2) delete d.contrib2;
 	d.selected = $('#check-sel').is(":checked");
 	if (!d.selected) delete d.selected;
 	d.disabled = $('#check-dis').is(":checked");
@@ -214,6 +218,7 @@ function editorSetHandlers() {
 	$('#type-radio').on("click", f);
 
 	$('#check-contrib').on("click", f);
+	$('#check-contrib2').on("click", f);
 	$('#check-sel').on("click", f);
 	$('#check-dis').on("click", f);
 	$('#check-dle').on("click", f);

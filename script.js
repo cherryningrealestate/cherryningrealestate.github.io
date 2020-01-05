@@ -183,7 +183,7 @@ function renderStep2() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (!d.contrib && isSelected(i)) {
+		if (d.contrib || (d.contrib2 && app.opt) || isSelected(i)) {
 			let row = $('<tr data-id="#">'.replace(/#/g, i)).appendTo(t);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
@@ -208,7 +208,7 @@ function renderStep3() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (d.contrib && !isSelected(i)) {
+		if (d.contrib || (d.contrib2 && app.opt)) {
 			let d = app.dataMap[i];
 			let row = $('<tr>').appendTo(t);
 			row.append('<td>' + d.oname);
@@ -245,20 +245,20 @@ function renderPrint(inhibit) {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (isSelected(i) || (!inhibit && d.contrib)) {
+		if (isSelected(i) || (!inhibit && (d.contrib || (d.contrib2 && app.opt)))) {
 
 			let row = $('<tr>').appendTo(tp);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
 
-			if (!d.contrib || isSelected(i)) {
-				if (!inhibit) row.append('<td>$0');
-				row.append('<td>$'+d.cost);
-				tot_2 += parseFloat(d.cost);
-			} else {
+			if (!inhibit && (d.contrib || (d.contrib2 && app.opt))) {
 				row.append('<td>$'+d.cost);
 				row.append('<td>$0');
 				tot_1 += parseFloat(d.cost);
+			} else {
+				if (!inhibit) row.append('<td>$0');
+				row.append('<td>$'+d.cost);
+				tot_2 += parseFloat(d.cost);
 			}
 		}
 	}
@@ -303,7 +303,8 @@ function step1() {
 	}
 }
 
-function step2() {
+function step2(opt) {
+	app.opt = opt;
 	if (renderStep2() === 0) {
 		step3();
 		return;
