@@ -1,6 +1,8 @@
 app = {
 	"itemCount": 0,
-	"dataMap": []
+	"dataMap": [],
+	"contribs": {},
+	"opt": false
 }
 
 function showAlert(level, text) {
@@ -160,6 +162,10 @@ function isSelected(i) {
 	return $('#customCheck'+i).prop("checked");
 }
 
+function isSelectedC(i) {
+	return $('#cCheck'+i).prop("checked");
+}
+
 function getSelected() {
 	let a = [];
 	for (let i = 1; i <= app.itemCount; i++) {
@@ -183,11 +189,22 @@ function renderStep2() {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (d.contrib || (d.contrib2 && app.opt) || isSelected(i)) {
+		if (d.contrib || isSelected(i)) {
 			let row = $('<tr data-id="#">'.replace(/#/g, i)).appendTo(t);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
 			row.append('<td>' + '$'+d.cost);
+			if (app.opt) {
+				row.append(`<td>
+					<div class="custom-control custom-checkbox">
+				  	  <input type="checkbox" class="custom-control-input" id="cCheck#">
+				  	  <label class="custom-control-label" for="cCheck#"></label>
+					</div></td>
+					`.replace(/#/g, i));
+				if (d.contrib) {
+					$('#cCheck'+i).prop("checked", true);
+				}
+			}
 			tot += parseFloat(d.cost);
 			cnt += 1;
 		}
@@ -204,16 +221,19 @@ function renderStep3() {
 
 	t.append('<tr><td>Generic Sign</td><td>$0</td></tr>');
 
+	app.contribs = {}
 	let tot = 0;
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (d.contrib || (d.contrib2 && app.opt)) {
+		if ((!app.opt && d.contrib) || (app.opt && isSelectedC(i))) {
+			$('#customCheck'+i).prop("checked", true);
 			let d = app.dataMap[i];
 			let row = $('<tr>').appendTo(t);
 			row.append('<td>' + d.oname);
 			row.append('<td>' + '$'+d.cost);
 			tot += parseFloat(d.cost);
+			app.contribs[i] = true;
 		}
 	}
 
@@ -245,13 +265,13 @@ function renderPrint(inhibit) {
 
 	for (let i = 1; i <= app.itemCount; i++) {
 		let d = app.dataMap[i];
-		if (isSelected(i) || (!inhibit && (d.contrib || (d.contrib2 && app.opt)))) {
+		if (isSelected(i)) {
 
 			let row = $('<tr>').appendTo(tp);
 			row.append('<td>' + d.cat);
 			row.append('<td>' + d.oname);
 
-			if (!inhibit && (d.contrib || (d.contrib2 && app.opt))) {
+			if (app.contribs[i]) {
 				row.append('<td>$'+d.cost);
 				row.append('<td>$0');
 				tot_1 += parseFloat(d.cost);
@@ -279,6 +299,8 @@ function dleMatch(addr) {
 }
 
 function step1() {
+	app.contribs = {}
+
 	try {
 		window.scrollTo(0, 0);
 
@@ -305,10 +327,11 @@ function step1() {
 
 function step2(opt) {
 	app.opt = opt;
-	if (renderStep2() === 0) {
+	if (!opt) {
 		step3();
 		return;
 	}
+	renderStep2();
 	try {
 		window.scrollTo(0, 0);
 		$('#step1').addClass('hide');
