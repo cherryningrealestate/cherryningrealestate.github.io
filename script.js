@@ -201,9 +201,6 @@ function renderStep2() {
 				  	  <label class="custom-control-label" for="cCheck#"></label>
 					</div></td>
 					`.replace(/#/g, i));
-				if (d.contrib) {
-					$('#cCheck'+i).prop("checked", true);
-				}
 			}
 			tot += parseFloat(d.cost);
 			cnt += 1;
