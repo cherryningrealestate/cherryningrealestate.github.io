@@ -31,17 +31,6 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "Title",
-     "cost": "12",
-     "cat": "Admin",
-     "contrib": true
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
      "radio": true,
      "group": "lim",
      "text": "LIM (standard)",
@@ -86,6 +75,13 @@
      "cat": "Admin"
     },
     "children": []
+   },
+   {
+    "d": {
+     "text": "New Item",
+     "checkbox": true
+    },
+    "children": []
    }
   ]
  },
@@ -103,8 +99,7 @@
      "text": "Bladescences plus package",
      "oname": "",
      "cost": "1000",
-     "cat": "Photograph",
-     "contrib": true
+     "cat": "Photograph"
     },
     "children": [
      {
@@ -114,8 +109,7 @@
        "text": "Dusk shot",
        "oname": "Bladescences plus package dusk",
        "cost": "160",
-       "cat": "Photograph",
-       "contrib": true
+       "cat": "Photograph"
       },
       "children": []
      },
@@ -126,8 +120,7 @@
        "text": "Reel",
        "oname": "Bladescences plus package reel",
        "cost": "150",
-       "cat": "Photograph",
-       "contrib": true
+       "cat": "Photograph"
       },
       "children": []
      }
@@ -136,31 +129,32 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "Photograph",
      "text": "My Agent Digital package +location editing",
      "oname": "",
      "cost": "825",
-     "cat": "Photograph",
-     "contrib": true
+     "cat": "Photograph"
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "Photograph",
      "text": "My Agent day/dusk shot +2d floor plan",
      "oname": "",
      "cost": "285",
-     "cat": "Photograph",
-     "contrib": true
+     "cat": "Photograph"
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "Signboard",
      "text": "1200*900 Signboard and A3 trifold",
      "oname": "",
      "cost": "206.50",
@@ -171,7 +165,8 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
+     "radio": true,
+     "group": "Signboard",
      "text": "1200*900 signboard, 50*A3 trifold  & 100* just list/sold",
      "oname": "",
      "cost": "251",
@@ -182,8 +177,9 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "1500*1200 signboard and 50 A3 trifold",
+     "radio": true,
+     "group": "Signboard",
+     "text": "1500*1200 signboard and 50* A3 trifold",
      "oname": "",
      "cost": "325",
      "cat": "Signboard"
@@ -193,13 +189,23 @@
    {
     "d": {
      "checkbox": true,
+     "radio": true,
+     "group": "Signboard",
+     "text": "1500*1200 signboard and 50* 12 page booklet",
+     "oname": "",
+     "cost": "",
+     "cat": ""
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
      "radio": false,
-     "text": "DLE open home invitation",
+     "text": "2000* DLE open home invitation delivered ",
      "oname": "",
      "cost": "440",
-     "cat": "Marketing",
-     "contrib": true,
-     "dle": true
+     "cat": "Marketing"
     },
     "children": []
    }
@@ -218,42 +224,36 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "Basic listing",
-     "oname": "Trademe basic listing",
-     "cost": "79",
-     "cat": "trademe.co.nz",
-     "contrib": true
+     "radio": true,
+     "group": "trademe",
+     "text": "Sliver Package (1 week superfuture, 3 week Premium& trotates to the top on Day 14)",
+     "oname": "",
+     "cost": "999",
+     "cat": "Internet "
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "3 weeks superfuture package",
-     "cost": "459",
-     "cat": "trademe.co.nz"
+     "radio": true,
+     "group": "trademe",
+     "text": "Gold Pakcage (6 month Premium, rotates to the top once every 7 days for 5 weeks, 1 week carousel & 1 week homepage feature)",
+     "oname": "",
+     "cost": "1399",
+     "cat": "Internet "
     },
     "children": []
    },
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "6 weeks premium listing",
-     "cost": "749",
-     "cat": "trademe.co.nz"
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "Boost",
-     "cost": "69",
-     "cat": "trademe.co.nz"
+     "radio": true,
+     "group": "trademe",
+     "text": "Premium Package (6 month Premium, rotates to the top11 times over 5 weeks, 1 week carousel & 1 week homepage feature)",
+     "oname": "",
+     "cost": "1799",
+     "cat": "Internet "
     },
     "children": []
    }
@@ -272,12 +272,12 @@
    {
     "d": {
      "checkbox": true,
-     "radio": false,
-     "text": "Basic listing",
-     "oname": "realestate.co.nz basic listing",
-     "cost": "59",
-     "cat": "realestate.co.nz",
-     "contrib": true
+     "radio": true,
+     "group": "realestate",
+     "text": "Sliver Package (feature till sold, 4 weeks premium , 4 weeks showcase & 4 refleshes)",
+     "oname": "",
+     "cost": "375",
+     "cat": "Internet "
     },
     "children": []
    },
@@ -286,22 +286,10 @@
      "checkbox": true,
      "radio": true,
      "group": "realestate",
-     "text": "3 weeks quality package",
+     "text": "Gold Package (feature till sold, 4 weeks premium , 6 weeks showcase & 6 refleshes)",
      "oname": "",
-     "cost": "250",
-     "cat": "realestate.co.nz"
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": true,
-     "group": "realestate",
-     "text": "3 weeks premium pacakge ",
-     "oname": "",
-     "cost": "400",
-     "cat": "realestate.co.nz"
+     "cost": "649",
+     "cat": "Internet "
     },
     "children": []
    }
@@ -322,9 +310,21 @@
      "checkbox": true,
      "radio": true,
      "group": "oneroof",
-     "text": "Starter package",
+     "text": "Starter Package ( feature till sold, reflesh each week over 3 weeks)",
+     "oname": "",
      "cost": "171.35",
-     "cat": "oneroof.co.nz"
+     "cat": "Internet"
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "Starter Boost package ( feature till sold, reflesh each week over 3 weeks & facebook/ instagram 2 weeks)",
+     "oname": "",
+     "cost": "344",
+     "cat": "Internet "
     },
     "children": []
    },
@@ -333,9 +333,10 @@
      "checkbox": true,
      "radio": true,
      "group": "oneroof",
-     "text": "Basic package",
-     "cost": "401.35",
-     "cat": "oneroof.co.nz"
+     "text": "Plus Package( feature till sold,super feature for 3 weeks reflesh each week over 4 weeks & carousel on nzherald.co.nz, oneroof homeage/news for 1 week) )",
+     "oname": "",
+     "cost": "516.35",
+     "cat": "Internet"
     },
     "children": []
    },
@@ -344,7 +345,8 @@
      "checkbox": true,
      "radio": true,
      "group": "oneroof",
-     "text": "Super package",
+     "text": "Plus Boost Package ( feature till sold, super feature for 3 weeks, reflesh each week over 4 weeks & carousel on nzherald.co.nz, oneroof homeage/news for 1 week)",
+     "oname": "",
      "cost": "516.35",
      "cat": "oneroof.co.nz"
     },
@@ -367,7 +369,8 @@
      "checkbox": true,
      "radio": true,
      "group": "hougarden",
-     "text": "Starter package",
+     "text": "Starter package (translate to Chinese)",
+     "oname": "",
      "cost": "99",
      "cat": "Hougarden"
     },
@@ -378,9 +381,21 @@
      "checkbox": true,
      "radio": true,
      "group": "hougarden",
-     "text": "Bronze Package (4 weeks plus wechat promotion)",
-     "cost": "399",
-     "cat": "Hougarden"
+     "text": "Premium Package (4 weeks showcase, one wechat promotion & 1 week homepage carousel)",
+     "oname": "",
+     "cost": "349",
+     "cat": "Internet "
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "Super Package (4 weeks showcase, 2 wechat promotion & 1 week homepage carousel & 1 target audience)",
+     "oname": "",
+     "cost": "699",
+     "cat": "Interent"
     },
     "children": []
    }
@@ -413,77 +428,6 @@
      "oname": "",
      "cost": "200",
      "cat": "Facebook"
-    },
-    "children": []
-   }
-  ]
- },
- {
-  "d": {
-   "checkbox": false,
-   "text": "Western Home",
-   "oname": "",
-   "cost": "",
-   "cat": ""
-  },
-  "children": [
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "1/4 page",
-     "oname": "",
-     "cost": "245.69",
-     "cat": "Western Home",
-     "num": 3
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "1/2 page",
-     "oname": "",
-     "cost": "491.38",
-     "cat": "Western Home",
-     "num": 3
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "Full page",
-     "oname": "",
-     "cost": "982.75",
-     "cat": "Western Home",
-     "num": 3
-    },
-    "children": []
-   }
-  ]
- },
- {
-  "d": {
-   "checkbox": false,
-   "text": "NZ Herald - Carousel",
-   "oname": "",
-   "cost": "",
-   "cat": "",
-   "pdf": "Barfoot Thompson Hot Properties Carousel - June 2017.pdf"
-  },
-  "children": [
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "Hot properties ",
-     "oname": "",
-     "cost": "300",
-     "cat": "NZ Herald",
-     "num": 3
     },
     "children": []
    }
