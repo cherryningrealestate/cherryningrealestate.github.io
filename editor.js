@@ -251,6 +251,7 @@ function editorLoad() {
 		reader.readAsText(file, 'UTF-8');
 		reader.onload = function(ev) {
 			let content = JSON.parse(ev.target.result);
+			$('#tree-root').empty();
 			editorLoadNodes(content, $('#tree-root'));
 		}
 	}
