@@ -137,24 +137,11 @@
     "d": {
      "checkbox": true,
      "radio": false,
-     "text": "HD video",
-     "cost": "300",
-     "cat": "Marketing"
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "checkbox": true,
-     "radio": false,
-     "text": "Aerial shooting",
+     "text": "My Agent Digital package +location editing",
      "oname": "",
-     "cost": "120",
-     "cat": "Marketing",
-     "images": [
-      "/img/DJI_0033.jpg",
-      "/img/DJI_0050.jpg"
-     ]
+     "cost": "825",
+     "cat": "",
+     "contrib": true
     },
     "children": []
    },
@@ -162,9 +149,11 @@
     "d": {
      "checkbox": true,
      "radio": false,
-     "text": "Dusk shooting",
-     "cost": "105",
-     "cat": "Marketing"
+     "text": "My Agent day/dusk shot +2d floor plan",
+     "oname": "",
+     "cost": "285",
+     "cat": "",
+     "contrib": true
     },
     "children": []
    },
@@ -173,8 +162,31 @@
      "checkbox": true,
      "radio": false,
      "text": "1200*900 Signboard and A3 trifold",
-     "cost": "205",
+     "oname": "",
+     "cost": "206.50",
      "cat": "Marketing"
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "1200*900 signboard, 50*A3 trifold  & 100* just list/sold",
+     "oname": "",
+     "cost": "251",
+     "cat": ""
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "1500*1200 signboard and 50 A3 trifold",
+     "oname": "",
+     "cost": "325",
+     "cat": "Signboard"
     },
     "children": []
    },
@@ -188,13 +200,6 @@
      "cat": "Marketing",
      "contrib": true,
      "dle": true
-    },
-    "children": []
-   },
-   {
-    "d": {
-     "text": "New Item",
-     "checkbox": true
     },
     "children": []
    }
