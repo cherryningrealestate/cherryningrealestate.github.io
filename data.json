@@ -106,32 +106,7 @@
      "cat": "Photograph",
      "contrib": true
     },
-    "children": [
-     {
-      "d": {
-       "checkbox": true,
-       "radio": false,
-       "text": "Dusk shot",
-       "oname": "Bladescences plus package dusk",
-       "cost": "160",
-       "cat": "Photograph",
-       "contrib": true
-      },
-      "children": []
-     },
-     {
-      "d": {
-       "checkbox": true,
-       "radio": false,
-       "text": "Reel",
-       "oname": "Bladescences plus package reel",
-       "cost": "150",
-       "cat": "Photograph",
-       "contrib": true
-      },
-      "children": []
-     }
-    ]
+    "children": []
    },
    {
     "d": {
