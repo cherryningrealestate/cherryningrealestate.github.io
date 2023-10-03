@@ -103,7 +103,7 @@
      "text": "Bladescences plus package",
      "oname": "",
      "cost": "1000",
-     "cat": "Marketing",
+     "cat": "Photograph",
      "contrib": true
     },
     "children": [
@@ -114,7 +114,7 @@
        "text": "Dusk shot",
        "oname": "Bladescences plus package dusk",
        "cost": "160",
-       "cat": "",
+       "cat": "Photograph",
        "contrib": true
       },
       "children": []
@@ -126,7 +126,7 @@
        "text": "Reel",
        "oname": "Bladescences plus package reel",
        "cost": "150",
-       "cat": "",
+       "cat": "Photograph",
        "contrib": true
       },
       "children": []
@@ -140,7 +140,7 @@
      "text": "My Agent Digital package +location editing",
      "oname": "",
      "cost": "825",
-     "cat": "",
+     "cat": "Photograph",
      "contrib": true
     },
     "children": []
@@ -152,7 +152,7 @@
      "text": "My Agent day/dusk shot +2d floor plan",
      "oname": "",
      "cost": "285",
-     "cat": "",
+     "cat": "Photograph",
      "contrib": true
     },
     "children": []
@@ -164,7 +164,7 @@
      "text": "1200*900 Signboard and A3 trifold",
      "oname": "",
      "cost": "206.50",
-     "cat": "Marketing"
+     "cat": "Signboard"
     },
     "children": []
    },
@@ -175,7 +175,7 @@
      "text": "1200*900 signboard, 50*A3 trifold  & 100* just list/sold",
      "oname": "",
      "cost": "251",
-     "cat": ""
+     "cat": "Signboard"
     },
     "children": []
    },
