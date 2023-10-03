@@ -75,13 +75,6 @@
      "cat": "Admin"
     },
     "children": []
-   },
-   {
-    "d": {
-     "text": "New Item",
-     "checkbox": true
-    },
-    "children": []
    }
   ]
  },
@@ -167,7 +160,7 @@
      "checkbox": true,
      "radio": true,
      "group": "Signboard",
-     "text": "1200*900 signboard, 50*A3 trifold  & 100* just list/sold",
+     "text": "1200*900 Signboard, 50*A3 trifold  & 100* just list/sold",
      "oname": "",
      "cost": "251",
      "cat": "Signboard"
@@ -193,8 +186,8 @@
      "group": "Signboard",
      "text": "1500*1200 signboard and 50* 12 page booklet",
      "oname": "",
-     "cost": "",
-     "cat": ""
+     "cost": "446",
+     "cat": "Signboard"
     },
     "children": []
    },
@@ -204,8 +197,8 @@
      "radio": false,
      "text": "2000* DLE open home invitation delivered ",
      "oname": "",
-     "cost": "440",
-     "cat": "Marketing"
+     "cost": "450",
+     "cat": "Flyer"
     },
     "children": []
    }
@@ -215,10 +208,9 @@
   "d": {
    "checkbox": false,
    "text": "trademe.co.nz",
+   "oname": "",
    "cost": "",
-   "cat": "",
-   "link": "https://www.trademe.co.nz/browse/categoryattributesearchresults.aspx?134=1&135=6&136=243&153=&132=PROPERTY&122=0&122=0&49=0&49=0&29=&123=0&123=0&search=1&sidebar=1&cid=5748",
-   "pdf": "Trade Me Collateral November 2017.pdf"
+   "cat": ""
   },
   "children": [
    {
@@ -263,10 +255,9 @@
   "d": {
    "checkbox": false,
    "text": "realestate.co.nz",
+   "oname": "",
    "cost": "",
-   "cat": "",
-   "link": "https://realestate.co.nz/residential/sale?by=featured&lct=s2622&ql=20",
-   "pdf": "Realestate_dot_co_Residential pricing flyer.pdf"
+   "cat": ""
   },
   "children": [
    {
@@ -299,10 +290,9 @@
   "d": {
    "checkbox": false,
    "text": "oneroof.co.nz",
+   "oname": "",
    "cost": "",
-   "cat": "",
-   "link": "https://www.oneroof.co.nz/search/houses-for-sale/suburb_glendene-waitakere-city-2622_surround_page_1",
-   "pdf": "OneRoof Barfoot  Thompson packages Nov 18.pdf"
+   "cat": ""
   },
   "children": [
    {
@@ -333,6 +323,29 @@
      "checkbox": true,
      "radio": true,
      "group": "oneroof",
+     "text": "Basic Package (feature till sold,super feature for 2 weeks reflesh each week over 4 weeks)",
+     "oname": "",
+     "cost": "401.35",
+     "cat": ""
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": false,
+     "text": "Basic Bosst Package (feature till sold,super feature for 2 weeks reflesh each week over 4 weeks & 2 weeks facebook/Google display)",
+     "oname": "",
+     "cost": "746",
+     "cat": ""
+    },
+    "children": []
+   },
+   {
+    "d": {
+     "checkbox": true,
+     "radio": true,
+     "group": "oneroof",
      "text": "Plus Package( feature till sold,super feature for 3 weeks reflesh each week over 4 weeks & carousel on nzherald.co.nz, oneroof homeage/news for 1 week) )",
      "oname": "",
      "cost": "516.35",
@@ -347,7 +360,7 @@
      "group": "oneroof",
      "text": "Plus Boost Package ( feature till sold, super feature for 3 weeks, reflesh each week over 4 weeks & carousel on nzherald.co.nz, oneroof homeage/news for 1 week)",
      "oname": "",
-     "cost": "516.35",
+     "cost": "976",
      "cat": "oneroof.co.nz"
     },
     "children": []
@@ -358,10 +371,9 @@
   "d": {
    "checkbox": false,
    "text": "Hougarden",
+   "oname": "",
    "cost": "",
-   "cat": "",
-   "link": "https://nz.hougarden.com/house-search/type_residential_suburb_glendene-2622_page_1",
-   "pdf": "HouGarden Residential Packages_20181112.pdf"
+   "cat": ""
   },
   "children": [
    {
